@@ -12,7 +12,7 @@ type FooterRowProps ={
 const FooterRow = ({variant} : FooterRowProps) => {
   return (
     <>
-    {/* First Footer Row (Displayed when no variant or variant is empty) */}
+    {/* Footer Row (Displayed when no variant or variant is empty) */}
     {!variant && (
                 <div className="footer-row">
                     {/* First Part */}
@@ -53,63 +53,61 @@ const FooterRow = ({variant} : FooterRowProps) => {
                 </div>
             )}
 
-    {/* Second Footer Row (Displayed only when variant is 'mb') */}
+    {/* Footer Row (Displayed only when variant is 'mb') */}
     {variant === 'mb' && (
                 <div className={`footer-row ${variant}`}>
-                    {/* First Part */}
-                    <div className="footer-logo">
-                        <Image className="mb" src="/assets/images/alhabtoor_black.png" alt="Logo" width={50} height={46} />
-                        <p>Member of the Al Habtoor Group</p>
-                    </div>
-
-                    {/* Second Part */}
-                    <div className="footer-links">
-                        <div className="sec1">
-                            <ul>
-                                {FOOTER[1].links.map((link, index) => (
-                                    <li key={index}>
-                                        <Link href={link.url}>
-                                            {link.text}
+                    {/* First section  */}
+                    <div className="sec1">
+                        <div className="row1">
+                            <div className="footer-logo">
+                                <Image className="mb" src="/assets/images/alhabtoor_black.png" alt="Logo" width={50} height={46} />
+                                <p>Member of the Al Habtoor Group</p>
+                            </div>
+                            <div className="footer-social">
+                                    <div className="social-icons">
+                                    {FOOTER[4].social_icons_black.map((icon, index) => (
+                                        <Link href={icon.url} key={index}>
+                                            <Image src={icon.icon} alt={icon.alt} width={24} height={24} />
                                         </Link>
-                                    </li>
-                                ))}
-                            </ul>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="sec2">
-                            <ul>
-                                <li><Link href="#">Al Habtoor Companies</Link></li>
-                            </ul>
-                            <ul>
-                                {FOOTER[2].alhabtoor.map((link, index) => (
-                                    <li key={index}>
-                                        <Link href={link.url}>
-                                            {link.text}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
+                        <div className="row2">
+                                <ul>
+                                    {FOOTER[1].links.map((link, index) => (
+                                        <li key={index}>
+                                            <Link href={link.url}>
+                                                {link.text}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
                         </div>
                     </div>
-
-                    {/* Third Part */}
-                    <div className="footer-social">
-                        <p>FOLLOW US ON</p>
-                        <div className="social-icons">
-                            {FOOTER[3].social_icons_white.map((icon, index) => (
-                                <Link href={icon.url} key={index}>
-                                    <Image src={icon.icon} alt={icon.alt} width={24} height={24} />
-                                </Link>
-                            ))}
-                        </div>
+                    {/* second section  */}
+                    <div className="sec2">
+                        <ul>
+                                    <li><Link href="#">Al Habtoor Companies</Link></li>
+                        </ul>
+                                <ul>
+                                    {FOOTER[2].alhabtoor.map((link, index) => (
+                                        <li key={index}>
+                                            <Link href={link.url}>
+                                                {link.text}
+                                            </Link>
+                                        </li>
+                                    ))}
+                        </ul>
                         <div className="additional-icons">
-                            <Link href="#"><Image src="/assets/images/sitelock.png" alt="Icon 1" width={24} height={24} /></Link>
-                            <Link href="#"><Image src="/assets/images/secure.png" alt="Icon 2" width={24} height={24} /></Link>
+                                <Link href="#"><Image src="/assets/images/sitelock.png" alt="Icon 1" width={24} height={24} /></Link>
+                                <Link href="#"><Image src="/assets/images/secure.png" alt="Icon 2" width={24} height={24} /></Link>
                         </div>
-                    </div>
+                        
+                    </div> 
                 </div>
             )}
-
     </>
   )
 }

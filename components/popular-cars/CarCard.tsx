@@ -35,19 +35,19 @@ const CarCard: React.FC<CarCardProps> = ({
         <p>{description}</p>
         <ul>
             <li>
-              <Image src="/assets/icons/seats.svg" alt="Seats Icon" width={24} height={24} />
+              <Image src="/assets/icons/seats.svg" alt="Seats Icon" width={9} height={15} />
               <span>{people}</span>
             </li>
             <li>
-              <Image src="/assets/icons/gear.svg" alt="Gear Icon" width={24} height={24} />
+              <Image src="/assets/icons/gear.svg" alt="Gear Icon" width={9} height={15} />
               <span>{transmission}</span>
             </li>
             <li>
-              <Image src="/assets/icons/car_door.svg" alt="Car Door Icon" width={24} height={24} />
+              <Image src="/assets/icons/car_door.svg" alt="Car Door Icon" width={9} height={15} />
               <span>{doors}</span>
             </li>
             <li>
-              <Image src="/assets/icons/ac.svg" alt="AC Icon" width={24} height={24} />
+              <Image src="/assets/icons/ac.svg" alt="AC Icon" width={9} height={15} />
               <span>{ac}</span>
             </li>
         </ul>
