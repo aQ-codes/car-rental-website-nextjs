@@ -25,7 +25,7 @@ const Booking = () => {
        <div className="booking-container">
             
             {/* according to the selected options below the LocationTimeSearch components changes  */}
-           <FilterOptions setOptionFromChild = {setOptionFromChild}/>
+            <FilterOptions setOptionFromChild = {setOptionFromChild}/>
 
             <LocationTimeSearch option={optionSelected as 'option1' | 'option2'}/>
 
@@ -78,6 +78,9 @@ const Booking = () => {
           setOptionFromChild = {setOptionFromChild}
           variant={['mb']}
       />
+      <LocationTimeSearch option={optionSelected as 'option1' | 'option2'}
+      />
+
     </div>
 </>
 

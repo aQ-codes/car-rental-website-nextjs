@@ -1,10 +1,10 @@
 export const NAV_LINKS = [
-    {href: '/', key: 'about', label:'About us'},
-    {href: '/', key: 'offers', label:'Offers'},
-    {href: '/', key: 'corporate', label:'Corporate'},
-    {href: '/', key: 'personal', label:'Personal'},
-    {href: '/', key: 'locations', label:'Locations'},
-    {href: '/', key: 'contact', label:'Contact us'},
+    {href: '/', label:'About us'},
+    {href: '/', label:'Offers'},
+    {href: '/', label:'Corporate'},
+    {href: '/', label:'Personal'},
+    {href: '/', label:'Locations'},
+    {href: '/', label:'Contact us'},
 ];
 
 export const SOCIAL_ICONS = [
@@ -32,6 +32,41 @@ export const carousel_images = [
       title: "car4"
     }
   ];
+
+  //Popular cards information
+
+export const POPULARCARS = [
+  {
+    image: {
+      src: '/assets/images/Mitsubishi_Eclipse.png',
+      alt: 'Mitsubishi Eclipse'
+    },
+    title: 'Mitsubishi Eclipse',
+    description: 'Eclipse Cross is a fusion of sharp coupe looks and dynamic SUV mobility with signature Mitsubishi styling.',
+    features: ['6 People', 'Automatic', '5 Doors', 'AC'],
+    price: 'AED 2700/ Monthly'
+  },
+  {
+    image: {
+      src: '/assets/images/jac_j7.png',
+      alt: 'Jac J7'
+    },
+    title: 'Jac J7',
+    description: 'LS3 Plus has been rated Five-Star in C-NCAP including front impact, side impact, frontal side impact & Whipping test.',
+    features: ['6 People', 'Automatic', '5 Doors', 'AC'],
+    price: 'AED 2700/ Monthly'
+  },
+  {
+    image: {
+      src: '/assets/images/Mitsubishi_Eclipse.png',
+      alt: 'Mitsubishi Eclipse'
+    },
+    title: 'Mitsubishi Eclipse',
+    description: 'Eclipse Cross is a fusion of sharp coupe looks and dynamic SUV mobility with signature Mitsubishi styling.',
+    features: ['6 People', 'Automatic', '5 Doors', 'AC'],
+    price: 'AED 2700/ Monthly'
+  }
+];
 
   // how to rent steps 
 
@@ -101,5 +136,59 @@ export const carousel_images = [
       question: 'How can I make the payment?',
       answer: 'You can make the payment online using a credit card, debit card, or other accepted payment methods.',
     },
+  ];
+  
+  // footer 
+
+ export const FOOTER = [
+    {
+      logo_icons: [
+        { icon: '/assets/images/sitelock.png', alt: 'Sitelock', url: '#' },
+        { icon: '/assets/images/secure.png', alt: 'Secure', url: '#' },
+      ]
+    },
+    {
+      links: [
+        { text: 'Home', url: '#' },
+        { text: 'Offers', url: '#' },
+        { text: 'FAQ', url: '#' },
+        { text: 'Career', url: '#' },
+        { text: 'About Us', url: '#' },
+        { text: 'Locations', url: '#' },
+        { text: 'Privacy Policy', url: '#' },
+        { text: 'Terms & Conditions', url: '#' },
+        { text: 'Services', url: '#' },
+        { text: 'Contact Us', url: '#' },
+        { text: 'Service Request', url: '#' },
+      ]
+    },
+    {
+      alhabtoor: [
+        { text: 'Hospitality', url: '#' },
+        { text: 'Real Estate', url: '#' },
+        { text: 'Education', url: '#' },
+        { text: 'Publishing', url: '#' },
+        { text: 'Automotive', url: '#' },
+        { text: 'Vehicle Leasing', url: '#' },
+      ]
+    },
+    {
+      social_icons_white: [
+        { icon: '/assets/icons/social_media/fb_white.svg', alt: 'Facebook', url: '#' },
+        { icon: '/assets/icons/social_media/x_white.svg', alt: 'X', url: '#' },
+        { icon: '/assets/icons/social_media/insta_white.svg', alt: 'Instagram', url: '#' },
+        { icon: '/assets/icons/social_media/lnkin_white.svg', alt: 'LinkedIn', url: '#' },
+        { icon: '/assets/icons/social_media/yt_white.svg', alt: 'YouTube', url: '#' }
+      ]
+    },
+    {
+      social_icons_black: [
+        { icon: '/assets/icons/social_media/fb_black.svg', alt: 'Facebook', url: '#' },
+        { icon: '/assets/icons/social_media/x_black.svg', alt: 'X', url: '#' },
+        { icon: '/assets/icons/social_media/insta_black.svg', alt: 'Instagram', url: '#' },
+        { icon: '/assets/icons/social_media/lnkin_black.svg', alt: 'LinkedIn', url: '#' },
+        { icon: '/assets/icons/social_media/yt_black.svg', alt: 'YouTube', url: '#' }
+      ]
+    }
   ];
   

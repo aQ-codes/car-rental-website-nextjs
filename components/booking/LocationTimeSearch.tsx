@@ -14,12 +14,12 @@ const LocationTimeSearch = ({option} : LocationTimeSearchProps) => {
   return (
     <div className="loc-time-search">
       
-      <SelectLocationDropdown/>
+      <SelectLocationDropdown placeholder='Pick-up location'/>
       
       {/* show SelectLocationDropdown once again if option2 different droppoff is selected  */}
-      {option==='option2' && <SelectLocationDropdown/>}
+      {option==='option2' && <SelectLocationDropdown placeholder='Drop-off location'/>}
 
-      <div className="btn datetime">
+      <div className="btn datetime first">
         <span>
           <Image src="/assets/icons/calender2.svg" alt="" width={10} height={10} />
         </span>
@@ -38,9 +38,8 @@ const LocationTimeSearch = ({option} : LocationTimeSearchProps) => {
       </a>
 
       <div className="bar"></div>
-
-      <a href="#" className="btn book">Quick Book</a>
-    </div>
+       <a href="#" className="btn book">Quick Book</a>
+     </div>
   )
   
 }

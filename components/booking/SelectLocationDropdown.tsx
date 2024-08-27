@@ -2,7 +2,11 @@ import Image from 'next/image'
 import React from 'react'
 import Dropdown from '@components/Dropdown';
 
-const SelectLocationDropdown = () => {
+type SelectLocationDropdownProps ={
+  placeholder?:string
+}
+
+const SelectLocationDropdown = ({placeholder}: SelectLocationDropdownProps) => {
 
   // various available locations 
   const locations = [
@@ -19,7 +23,7 @@ const SelectLocationDropdown = () => {
           options={locations} 
           icon1='/assets/icons/location.svg'
           icon2='/assets/icons/invert-triangle.svg'
-          placeholder='Pickup Location'
+          placeholder={placeholder}
           variant={['btn dd']}
         />
   )

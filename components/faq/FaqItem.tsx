@@ -20,12 +20,14 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
       {/* question section with plus and close buttons */}
       <div className="faq-question">
             <div>{question}</div>
-            <div className="faq-icon plus">
-            {!isOpen && <Image src="/assets/icons/plus.svg" alt="Expand" width={16} height={16} onClick={toggleOpen}/>}
-            </div>
-            <div className="faq-icon close">
-            {isOpen && <Image src="/assets/icons/close.svg" alt="Collapse" width={16} height={16} />}
-        </div>
+            {/* display plus icon if isopen value is false  */}
+            {!isOpen && <div className="faq-icon plus">
+             <Image src="/assets/icons/plus.svg" alt="Expand" width={16} height={16} onClick={toggleOpen}/>
+            </div>}
+            {/* display close icon if isopen value is true  */}
+            {isOpen && <div className="faq-icon close">
+            <Image src="/assets/icons/close.svg" alt="Collapse" width={16} height={16} onClick={toggleOpen}/>
+            </div>}
       </div>
       {/* answer */}
       {isOpen && <div className="faq-answer">{answer}</div>}

@@ -58,7 +58,7 @@
     font-weight: 400;
     color: var(--black);
     border-radius: 18px;
-    z-index: 2000;
+    z-index: 2001;
     width:188px;
     user-select: none;
 }
@@ -124,7 +124,7 @@ header .main-container{
     cursor: pointer;
 }
 
-#mobile-menu-icon, #close-btn{
+#mobile-menu-icon, #close-btn, .footer-row.mb{
     display: none;
 }
 
@@ -222,6 +222,7 @@ main{
 
 .options a, .options .transparent{
     color: var(--white);
+
 }
 
 .options a.active {
@@ -245,8 +246,7 @@ main{
     justify-content: space-between;
     font-weight: 300;
     width:180px;
-    z-index: 2000;
-
+    z-index: 2004;
 }
 
 /* car type dropdown */
@@ -256,6 +256,7 @@ main{
     width:180px;
     background-color: rgba(167, 9, 9, 0.959);
     color: var(--white);
+
 }
 
 
@@ -269,13 +270,18 @@ main{
     width:188px;
     padding: 14px 16px;
     border-radius: 18px;
-    user-select: none;
+    user-select: none;    
+
 
 }
 
 .loc-time-search .btn.dd {
-    z-index: 2000;
+    z-index: 2002;
     
+}
+
+.loc-time-search .btn.dd:first-child {
+    z-index: 2003;
 }
 
 .loc-time-search .btn ::placeholder{
@@ -326,8 +332,13 @@ main{
 /* styling the datepicker library  */
 
 .datetime{
-    z-index: 1999;
+    z-index: 2000;
 }
+
+.datetime.first{
+    z-index: 2001;
+}
+
 .react-datepicker__input-container input {
     width: 100%;
     border: none;
@@ -361,7 +372,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 24px; 
-    z-index: 2000;
+    z-index: 5000;
 }
 
 .side-button {
@@ -755,7 +766,6 @@ main{
     justify-content: center;
 }
 
-
 /* location section  */
 
 
@@ -836,12 +846,9 @@ main{
 }
 
 .faq-icon:hover {
-    font-size: 21px;
+    
     opacity: 70%;
-}
-
-.faq-icon.close{
-    display: none; 
+    transform: scale(1.01)
 }
 
 .faq-answer { 
@@ -849,24 +856,10 @@ main{
     font-size: 14px;
     padding: 10px 0;
     opacity: 50%;
-    display: none;
+    transition: transform 2s ease;
+
 }
 
-.faq-answer.active{
-    display: block;
-}
-
-.faq-icon.close{
-    display: none;
-}
-
-.faq-icon.active{
-    display: block;
-}
-
-.faq-icon.inactive{
-    display:none
-}
 /* footer  */
 
 .footer-row {
@@ -1028,7 +1021,7 @@ main{
         right: 0px;
         width: 100vw; 
         height: 100vh;
-        z-index: 2001; 
+        z-index: 5001; 
         transition: transform 0.3s ease;
         padding: 0;
     }
@@ -1116,11 +1109,12 @@ main{
 
     .options.mb{
         display: flex;
-        gap: 14px;
-        font-size: 13px;
+        gap: 8px;
+        font-size: 12px;
         font-weight: 400;
         color: var(--black);
         margin-top: 24px;
+        flex-wrap: nowrap;
     }
 
     .options.mb a {
@@ -1131,49 +1125,43 @@ main{
         font-weight: 500;
         border-bottom: 1px solid var(--black);
     }
-    .options.mb a.not-active{
-        opacity: 70%;
-    }
-
-    .options.mb select{
+    
+    .options.mb .btn.transparent{
         color: var(--black);
-        padding:0px 0px;
-        border: none;
-        outline: none;
+        background-color: rgba(77, 77, 77, 0.073);
+        width:120px;
+        padding: 4px 4px;
+        /* z-index: 2005; */
+
     }
 
-    .loc-time-search.mb{
+    .bk-mobile .loc-time-search {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+        font-size: 12px;
+
     }
 
-    .loc-time-search.mb .btn{
+    .bk-mobile .loc-time-search .btn{
         flex-grow: 1;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 400;
         background-color: var(--color6);
         border-radius: 8px;
     }
 
-    .loc-time-search.mb .btn:nth-of-type(3) span:last-child, .loc-time-search.mb .btn:nth-of-type(4) span:last-child{
-        margin-left: 3px;
+    .bk-mobile .loc-time-search .btn:nth-of-type(3) span:last-child,.bk-mobile .loc-time-search .btn:nth-of-type(4) span:last-child,.bk-mobile .loc-time-search .btn:nth-of-type(2) span:last-child{
+        margin-left: 2px;
     }
 
-   
-    .loc-time-search.mb .search{
-        display: block;
-        width: 100%;
-        margin-top: 16px;
-}
+    .react-datepicker__input-container input{
+        background-color: var(--color6);
+        text-align: left;
+    }
 
-    .loc-time-search.mb .search .btn{
-        border-radius: 4px;
-        margin: auto;
-        background-color: var(--color4);
-        color: var(--white);
-        font-weight: 600;
-        justify-content: center;
+    .bk-mobile .search, .bk-mobile .bar, .bk-mobile .book{
+        display: none;
     }
  
     /* carousel section  */
@@ -1272,200 +1260,219 @@ main{
         padding: auto 32px;
     }
 
-/* news letter  section*/
+    /* news letter  section*/
 
-#newsletter-section .main-container {
-    flex-direction: column;
-}
+    #newsletter-section .main-container {
+        flex-direction: column;
+    }
 
-#newsletter-section .main-container .part1  {
-    padding: 16px;
-}
+    #newsletter-section .main-container .part1  {
+        padding: 16px;
+    }
 
- #newsletter-section .main-container .part2{
-    padding: 16px 16px 16px 8px;
-    margin: 16px;
-    width: auto;
+    #newsletter-section .main-container .part2{
+        padding: 16px 16px 16px 8px;
+        margin: 16px;
+        width: auto;
+        
+    }
+
+    #newsletter-section .part1 h2{
+        font-size: 16px;
+        width: 70%;
+    }
+
+    #newsletter-section .part1 .sub-container{
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .input-group {
+        flex-direction: column;
+
+    }
+
+    .input-group input{
+        flex-grow: 1;
+        width: 100%;
+    }
+
+    #newsletter-section .part1 p{
+        font-size: 12px;
+        opacity: 80%;
     
-}
-
-#newsletter-section .part1 h2{
-    font-size: 16px;
-    width: 70%;
-}
-
-#newsletter-section .part1 .sub-container{
-    margin-top: 40px;
-    width: 100%;
-}
-
-.input-group {
-    flex-direction: column;
-
-}
-
-.input-group input{
-    flex-grow: 1;
-    width: 100%;
-}
-
-#newsletter-section .part1 p{
-    font-size: 12px;
-    opacity: 80%;
- 
-}
+    }
 
 
-#newsletter-section .part1 .btn{
-    width: 128px;
-    padding: 8px;
-   
-}
+    #newsletter-section .part1 .btn{
+        width: 128px;
+        padding: 8px;
+    
+    }
 
 
-#newsletter-section .part2 .container {
-    display: flex;
-    gap: 8px;
-    position: relative;
-    height: 350px;
+    #newsletter-section .part2 .container {
+        display: flex;
+        gap: 8px;
+        position: relative;
+        height: 350px;
 
-}
+    }
 
-#newsletter-section .part2 .app-image{
-    margin-top: 0px;
-}
+    #newsletter-section .part2 .app-image{
+        margin-top: 0px;
+    }
 
-#newsletter-section .part2 .app-image img{
-    width: 146px;
-    height: 245px;
-}
+    #newsletter-section .part2 .app-image img{
+        width: 146px;
+        height: 245px;
+    }
 
-.dwn-link.dsktp{
+    .dwn-link.dsktp{
+        display: none;
+    }
+
+    .dwn-link.mb {
+        display: flex;
+        flex-direction: column;
+        height: 250px;
+    }
+
+
+    #newsletter-section .part2 .dwn-link h3{
+        font-size: 12px;
+        margin-top: 0px;
+
+    }
+
+    .dwn-link.mb input, .dwn-link.mb button{
+        position: absolute;
+        left: 0px;
+        bottom: 64px;
+    }
+
+    #newsletter-section .part2 .dwn-link .btn{
+        padding: 8px 32px;
+    }
+
+
+
+    .dwn-link.mb button{
+        bottom: 4px;
+
+    }
+
+    #newsletter-section .part2 .dwn-link .button-group {
+        flex-direction: column;
+    }
+
+    #newsletter-section .part2 p{
+        font-size: 12px;
+        margin: 40px 0px 0px 0px ;
+
+    }
+
+    #newsletter-section .part2 .dwn-link .button-group a img{
+        height: 30px;
+        width:100px;
+    }
+
+    /* rent a car section  */
+
+    #rent-container .heading h1{
+        text-align: left;
+        margin-bottom: 20px;
+        font-size: 16px;
+        margin-left: 16px;
+    }
+
+    #rent-container .row{
+        flex-direction: column;
+        padding:0px 16px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content-box {
+        width: 100%;
+    }
+
+
+    /* location section  */
+
+    #location-section{
+        margin: 24px 16px;
+        padding: 16px;
+        font-size: 14px;
+
+    }
+
+    #location-section .header{
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: 24px;
+
+    }
+
+    #location-section .locations-list{
+        padding: 0px 0px;
+        margin-bottom: 12px;
+        row-gap: 24px;
+        gap: 8px;
+
+    }
+
+    #location-section li{
+        display: flex;
+        align-items: center;
+        gap:8px;
+    }
+
+
+    #location-section li img{
+        width: 14px;
+    }
+
+    #location-section li.bar {
+        display: none;
+    }
+
+    /* faq section  */
+
+    .faq-heading{
+        font-size: 16px;
+        text-align: left;
+        margin-left: 16px;
+    }
+
+
+    .faq-section {
+        margin: 16px;
+    }
+
+    .faq-question {
+        font-size: 13px;
+    }
+
+
+   /* footer  */
+
+   .footer-row {
     display: none;
-}
-
-.dwn-link.mb {
-    display: flex;
-    flex-direction: column;
-    height: 250px;
-}
-
-
-#newsletter-section .part2 .dwn-link h3{
-    font-size: 12px;
-    margin-top: 0px;
-
-}
-
-.dwn-link.mb input, .dwn-link.mb button{
-    position: absolute;
-    left: 0px;
-    bottom: 64px;
-}
-
-#newsletter-section .part2 .dwn-link .btn{
-    padding: 8px 32px;
-}
-
-
-
-.dwn-link.mb button{
-    bottom: 4px;
-
-}
-
-#newsletter-section .part2 .dwn-link .button-group {
-    flex-direction: column;
-}
-
-#newsletter-section .part2 p{
-    font-size: 12px;
-    margin: 40px 0px 0px 0px ;
-
-}
-
-#newsletter-section .part2 .dwn-link .button-group a img{
-    height: 30px;
-    width:100px;
-}
-
-/* rent a car section  */
-
-#rent-container .heading h1{
-    text-align: left;
-    margin-bottom: 20px;
-    font-size: 16px;
-    margin-left: 16px;
-}
-
-#rent-container .row{
-    flex-direction: column;
-    padding:0px 16px;
-}
-
-.box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.content-box {
-    width: 100%;
-}
-
-
-/* location section  */
-
-#location-section{
-    margin: 24px 16px;
-    padding: 16px;
-    font-size: 14px;
-
-}
-
-
-#location-section .header{
-    font-size: 16px;
-    text-align: left;
-    margin-bottom: 24px;
-
-}
-
-#location-section .locations-list{
-    padding: 0px 0px;
-    margin-bottom: 12px;
-    row-gap: 24px;
-    gap: 8px;
-
-}
-
-#location-section li{
-    display: flex;
-    align-items: center;
-    gap:8px;
-}
-
-
-#location-section li img{
-    width: 14px;
-}
-
-#location-section li.bar {
-    display: none;
-}
-
-
-/* footer  */
+   }
    
-    .footer-row {
-        padding: 0;
+   .footer-row.mb{
+        padding: 16px;
         flex-direction: column;
         background-color: var(--color6);
         color: #000000;
     }
-    
-   
+
     .footer-logo {
         flex-direction: row;
         width: 113px;
@@ -1474,9 +1481,16 @@ main{
         color: var(--black);
     }
 
-    
     .footer-logo p{
         font-size: 8px;
+    }
+
+    .footer-logo img:first-child{
+        display: none;
+    }
+
+    .footer-logo .mb{
+        display: block;
     }
 
     .footer-links .sec2{
@@ -1488,45 +1502,40 @@ main{
         font-size: 12px;
 
     }
-    
-     /*
-    .footer-links {
-        display: flex;
+
+ /*
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+} */
+
+
+/* @media (max-width: 768px) {
+    .footer-row {
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
+    }
+    
+    .footer-links {
+        align-items: center;
     }
     
     .footer-social {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        align-items: center;
     }
-    
-    .footer-bottom {
-        text-align: center;
-        padding-top: 10px;
-    } */
-    
-    
-    /* @media (max-width: 768px) {
-        .footer-row {
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .footer-links {
-            align-items: center;
-        }
-        
-        .footer-social {
-            align-items: center;
-        }
-    }  */
-    
-
-    .footer{
-        overflow: hidden;
-    }
+}  */
 
     
 }
